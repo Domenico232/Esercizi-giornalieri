@@ -5,6 +5,7 @@ body{
     font: color #393d41 ;
     font-size: 1.2rem;
     line-height: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
 }
 h1 {
     color:#25a2c3 ;
@@ -23,7 +24,8 @@ header{
 
 h3{
     color: #25a2c3;
-}
+    font-size: 22px;
+    }
 
 .divbanner{
     background-image: url('../img/banner.jpg');
@@ -50,16 +52,18 @@ input{
 
 .orange{
     background-color: #f04c2f; 
-    padding-bottom: 5rem;
+    padding-bottom: 7px;
+    padding-top: 7px;
 
 
 }
 
 .picture1 ,.picture2, .picture3{
-    border: solid 1px #dee1e3;
+   
     width: auto;
     margin-left:0%;
     margin-bottom: 20px;
+    box-shadow: 1px 1px #dee1e3;
 }
 
 
@@ -73,6 +77,8 @@ input{
 footer{
     background-color: #25a2c3;
     color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 footer > h1 {
@@ -81,4 +87,9 @@ footer > h1 {
 
 footer > a{
     color: white;
+}
+
+footer> a::before {
+
+
 }
