@@ -1,0 +1,47 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+    text-align: center;
+    font: color #393d41 ;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+h1 {
+    color:#25a2c3 ;
+    font: bold;
+    line-height: 1.5rem
+}
+
+header{
+    background-color: black ;
+    padding: 20px;
+}
+.epiclogo{
+    max-width: 45%;
+}
+
+h3{
+    color: #25a2c3;
+}
+
+.divbanner{
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    size: 50rem;
+
+}
+input{ 
+    background-color: #f04c2f;
+    color: white;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.notebookke{
+    border-radius: 100%;
+}
+
