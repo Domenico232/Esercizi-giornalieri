@@ -15,6 +15,7 @@ h1 {
 header{
     background-color: black ;
     padding: 20px;
+    margin-bottom: 0%;
 }
 .epiclogo{
     max-width: 45%;
@@ -28,6 +29,7 @@ h3{
     background-image: url('../img/banner.jpg');
     background-size: cover;
     size: 50rem;
+    padding-top: 3px;
 
 }
 input{ 
@@ -41,25 +43,29 @@ input{
 
 .notebookke{
     border-radius: 100%;
+    width: 90%;
+    max-width: 40%;
 }
 
 
 .orange{
     background-color: #f04c2f; 
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
 
 
 }
 
 .picture1 ,.picture2, .picture3{
     border: solid 1px #dee1e3;
-    
+    width: auto;
+    margin-left:0%;
+    margin-bottom: 20px;
 }
 
 
 
 .foto11, .foto22, .foto33{
-    min-width: 480px;
+   width: 100%;
 
 }
 
