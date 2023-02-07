@@ -1,7 +1,7 @@
 
 const Pgreco = 3.14;
 var rio = 'Aldo';
-let numero =15;
+const numero =15;
 
 
 {
