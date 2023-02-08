@@ -26,10 +26,9 @@ const numero =15;
 }
 
 
-    
-    let somma=numero+15;
-    let incre=somma++; 
-    let sott=numero-10;
+let somma=numero+15;
+let incre=somma++; 
+let sott=numero-10;
     let decre=sott--;
     let div=numero/3;
     document.getElementById('iniziale').innerHTML='Valore iniziale: ' +numero;
