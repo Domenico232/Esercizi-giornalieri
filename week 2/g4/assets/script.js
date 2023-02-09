@@ -137,7 +137,7 @@ var femaleCharacters = [
   }
 ];
 
-console.log(femaleCharacters)
+console.log(femaleCharacters);
 
 
 /* ESERCIZIO 4
@@ -147,15 +147,15 @@ console.log(femaleCharacters)
 */
 
 const eyecolor = {
-  blue: [] ,
-  yellow:[],
-  brown:[],
-  red:[],
-  bluegray:[]
+  blue: [],
+  yellow: [],
+  brown: [],
+  red: [],
+  bluegray: []
 
 };
 
-  console.log(eyecolor);
+console.log(eyecolor);
 
 
 
@@ -168,54 +168,52 @@ const eyecolor = {
   */
 var i;
 
-  for (i = 0; i < starWarsCharacters.length; i++){
+for (i = 0; i < starWarsCharacters.length; i++) {
 
-    switch (starWarsCharacters[i].eye_color) {
+  switch (starWarsCharacters[i].eye_color) {
 
-      case'blue':
+    case 'blue':
       eyecolor.blue.push(starWarsCharacters[i]);
       break;
 
-      case'yellow':
+    case 'yellow':
       eyecolor.yellow.push(starWarsCharacters[i]);
       break;
 
-      case'brown':
+    case 'brown':
       eyecolor.brown.push(starWarsCharacters[i]);
       break;
 
-      case'red':
+    case 'red':
       eyecolor.red.push(starWarsCharacters[i]);
       break;
 
-      case'blue-gray':
+    case 'blue-gray':
       eyecolor.bluegray.push(starWarsCharacters[i]);
       break;
-      
-      default:
-        console.log('errore')
-        break;
-    };
-    };
-    
+
+    default:
+      console.log('errore')
+      break;
+  };
+};
+
 console.log(eyecolor)
-
-
-
-
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio
   CONSOLE LOG
   */
-    let somma=0;
-    let risultato=0;
-  while (somma < starWarsCharacters.length) {
 
-      risultato+= (starWarsCharacters[somma].mass);
-      i++;
-  };
+let risultato = 0;
+let conta = 0;
 
-console.log(risultato)
+while (conta < starWarsCharacters.length) {
+
+  risultato += parseInt(starWarsCharacters[conta].mass);
+  conta++;
+};
+
+console.log(risultato);
 
 
 /* ESERCIZIO 7
@@ -233,6 +231,28 @@ Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se
 CONSOLE LOG
 */
 
+totalMass = 400;
+switch (true) {
+  case totalMass < 500:
+    console.log("Ship is under loaded");
+    break;
+  case totalMass === 500:
+    console.log("Ship is half loaded");
+    break;
+  case totalMass > 1000:
+    console.log("DANGER! OVERLOAD ALERT: Jump ship now!");
+    break;
+  case totalMass > 900:
+    console.log("Critical Load: Over 900");
+    break;
+  case totalMass > 700:
+    console.log("Warning: Load is over 700");
+    break;
+  default:
+    console.log("OK");
+    break;
+}
+
 
 
 /* ESERCIZIO 8
@@ -240,6 +260,11 @@ Usa un for loop per cambiare il valore della proprietà "gender" di alcuni perso
 CONSOLE LOG DELL'INTERO ARRAY
 */
 
+for (let gen = 0; gen < starWarsCharacters.length; gen++) {
+  if (starWarsCharacters[gen].gender='n/a'){
+    starWarsCharacters[gen].gender='robot'
+  }
+console.log(starWarsCharacters)}
 
 
 /* EXTRA ESERCIZIO 9
@@ -253,7 +278,14 @@ Una volta fatto crea un conosle.log per controllare la proprietà length di "cha
 */
 
 
-
+for (let i = 0; i < femaleCharacters.length; i++) {
+  for (let j = 0; j < characters.length; j++) {
+    if (femaleCharacters[i].name === characters[j]) {
+      characters.splice(j, 1);
+    }
+  }
+}
+console.log(characters);
 
 
 
