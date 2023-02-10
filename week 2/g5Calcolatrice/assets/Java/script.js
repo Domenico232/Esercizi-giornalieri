@@ -35,6 +35,7 @@ document.getElementById('4').addEventListener('click', function () {
     calcolotot.innerHTML += 4;
 });
 
+
 document.getElementById('5').addEventListener('click', function () {
     calcolotot.innerHTML += 5;
 });

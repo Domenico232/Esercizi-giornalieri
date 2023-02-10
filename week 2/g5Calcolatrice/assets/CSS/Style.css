@@ -1,4 +1,31 @@
-.re{
-   color: aqua;
-   background-color: black;
+body{
+    width: auto;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: yellow;
+    background-color: black;
+}
+
+
+table{
+    border: 3px solid black;
+    margin: auto;
+    padding-top: 5%;
+    width: 50%;  
+    height: 40rem;
+    }
+
+
+
+.btn{
+    color : yellow;
+    background-color: black;
+    font-size: 8rem;
+}
+
+
+.btn:hover{
+    background-color: yellow;
+    color: black;
 }
