@@ -24,6 +24,14 @@ table{
     font-size: 8rem;
 }
 
+textarea{
+    color: yellow;
+    font-size: 70px;
+    background-color: black;
+    border:none;
+    resize: none;
+}
+
 
 .btn:hover{
     background-color: yellow;
