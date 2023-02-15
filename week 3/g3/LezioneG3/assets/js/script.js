@@ -25,13 +25,14 @@ aggiungi.addEventListener('click', () => {
 			'Scrivere una voce nel campo di input';
 		return;
 	}
+	console.log(Voce);
 });
 
 function scriviLista() { // Utilizza la prima istanza di classe per stampare la lista
 	lista.innerHTML = '';
     document.getElementById('errore').innerHTML = '';
 	elenco.forEach((el, index) => {
-		lista.innerHTML += `<li>${el.voceInserita()}<button> cancella </button> </li>`;
+		lista.innerHTML += `<li>${el.voceInserita()}<button type="reset"> cancella </button> </li>`;
 	});
 }
 
