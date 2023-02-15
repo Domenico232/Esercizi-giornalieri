@@ -352,3 +352,24 @@ console.log(conta())
 /* ESERCIZIO 18 (EXTRA)
   Scrivi una funzione per recuperare tutti i film dall'array fornito che contengono una parola fornita.
 */
+function cerca(par){
+  var cerca=[];
+for (let i = 0; i < movies.length; i++) {
+
+  if (movies[i].Title.search(par) == par) {
+
+    cerca.push(movies[i]);
+
+  } else {
+
+    cerca.push();
+  }
+
+  return cerca;
+  
+}};
+
+console.log(cerca('Avengers'))
+
+
+
