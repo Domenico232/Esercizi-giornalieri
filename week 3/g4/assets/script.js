@@ -24,7 +24,7 @@ addClassToTitle();
 const changePcontent = function () {
     let par = document.querySelectorAll('div p');
     par.forEach(element =>
-        element.textContent = `${element.textContent} updated`
+        element.textContent += ` updated`
     )
 }
 changePcontent();
@@ -88,11 +88,13 @@ paintItGreen();
 */
 
 const makeItClickable = function () {
-    const h1Title = document.querySelector('h1');
-    h1Title.addEventListener('click', () => {
-        const colors = ['red', 'blue', 'green', 'orange', 'purple'];
-        h1Title.style.color = colors[Math.floor(Math.random() * colors.length)];
-    });
+    const daclicckare = document.getElementById('classe');
+    
+    daclicckare.addEventListener('click', function cliccato(){
+        let array=['yellow', 'green'];
+        daclicckare.style.color = array[Math.floor(Math.random()*array.length)]
+    }
+    )
 }
 makeItClickable();
 
