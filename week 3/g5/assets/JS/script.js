@@ -1,28 +1,5 @@
 
 
-/*var n = prompt('Inserisci un numero: ');
-while (n < 0){
-   n = prompt('Inserisci un numero: ');
-}
-	
- var div = 1;
- var conta=0;
-	
- while(conta <= 1 && div <= n/2) {
-   if(n % div == 0)  {
-	conta++;	
-   }
-   div++;
- }
-	
- if (conta == 1){
-   document.write('Il numero è primo ');
- }   
- else {
-    document.write('Il numero non è primo ');
- }*/
-
- 
 /*
 REGOLE
 - Tutte le risposte devono essere scritte in JavaScript
@@ -382,12 +359,6 @@ const movies = [
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 
 
-function deleteProp(obg, remover) {
-
-    
-    delete obg.remover
-    return obg
-}}
 
 console.log(deleteProp({ciao: "ciu", mario:"mario" },'mario'))
 
