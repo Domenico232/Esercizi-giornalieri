@@ -213,7 +213,7 @@ var howManyDays = (data) => {
 
     let giorni = diff / (1000 * 3600 * 24);
 
-    return Math.floor(giorni);
+    return 'i giorni passati sono '+ Math.floor(giorni);
 }
 console.log(howManyDays(new Date('2023 02 13')));
 
