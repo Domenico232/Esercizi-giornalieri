@@ -621,13 +621,14 @@ document.getElementsByTagName("tr").className = "test";
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 var button = document.getElementById("perprimo");
-var n = document.getElementById('primo')
+
 
 button.addEventListener('click', function () {
-      primo();
+  var n = document.getElementById('primo').value;
+      primo(n);
 });
 
-function primo(){
+function primo(n){
   while (n < 0){
     var n = document.getElementById('primo')
   }
@@ -648,28 +649,6 @@ function primo(){
   else {
     document.getElementById('risultato').innerHTML='Il numero non è primo ';
   }
-}
+  }
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
-
-var n = prompt('Inserisci un numero: ');
-while (n < 0){
-   n = prompt('Inserisci un numero: ');
-}
-	
- var div = 1;
- var conta=0;
-	
- while(conta <= 1 && div <= n/2) {
-   if(n % div == 0)  {
-	conta++;	
-   }
-   div++;
- }
-	
- if (conta == 1){
-   document.write('Il numero è primo ');
- }   
- else {
-    document.write('Il numero non è primo ');
- }
