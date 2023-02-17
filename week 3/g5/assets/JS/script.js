@@ -55,7 +55,7 @@ console.log(me);
 
 */
 
-me.skills.push('java','java')
+me.skills.push('java')
 console.log(me)
 
 
