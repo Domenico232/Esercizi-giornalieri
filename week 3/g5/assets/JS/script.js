@@ -128,8 +128,11 @@ console.log(deleteOne("ciaociao",false))
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
-
-
+function onlyLetters(sNienteNumeri){
+  sNienteNumeri = sNienteNumeri.replace(/[0-9]/g,"")
+  return sNienteNumeri;
+}
+console.log(onlyLetters('I have 4 dogs senza numeri'))
 
 
 /* ESERCIZIO 6
