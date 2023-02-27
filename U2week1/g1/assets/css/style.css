@@ -26,20 +26,20 @@ header {
 header div img {
     margin-bottom: 20px;
 }
-header nav ul {
+header nav a {
     margin: 0;
 }
-header nav li {
+header nav a {
     list-style: none;
 }
-header nav li a {
+header nav a {
     color: white;
     text-decoration: none;
 }
-header nav li a:hover {
+header nav a:hover {
     color: red;
 }
-header nav li a::before {
+header nav a::before {
     content: "\22c6\0020";
 }
 
@@ -179,9 +179,12 @@ footer a {
     color: fuchsia;
 }
 
-@media screen and (min-width:320px){
+@media(min-width:320px){
    body{
     width: 100%;
+   }
+   header{
+    height: fit-content;
    }
   
 }
@@ -189,14 +192,45 @@ footer a {
 @media(min-width:576px){
     table{
         margin: 0 auto;
-        margin-bottom: 50px;
+        margin-bottom: 10%;
        }
-}
-
-@media(min-width:768px){
-
 }
 
 @media(min-width:1200px){
 
-}
+    table{
+        margin: 0 auto;
+        margin-bottom: 10%;
+        width: 80%;
+        }
+        iframe{
+            width: 50%;
+            height: 40%;
+            
+        }
+section{
+        width:50%;
+        margin: 0;
+        float: right;
+        border-radius: 15px;
+        height: 50%;
+       }
+       .inlive{
+        width: 33%;
+        float: left;
+       }
+       .inlive2{
+        width: 33%;
+        float:left ;
+       }
+       .inlive3{
+        width: 33%;
+        float: left;
+       }
+       main{
+        padding-bottom: 10%;
+       }
+
+    }
+      
+      
