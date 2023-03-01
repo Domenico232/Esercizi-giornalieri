@@ -27,6 +27,8 @@ header {
   box-shadow: 0 3px 3px #444;
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
+  position: fixed;
+  width: 100%;
 }
 
 @media screen and (min-width: 800px) {
@@ -393,3 +395,9 @@ article img{
   display: inline;
 }
 
+
+header{
+  position: fixed ;
+  top: 0;
+  z-index: 1;
+}
