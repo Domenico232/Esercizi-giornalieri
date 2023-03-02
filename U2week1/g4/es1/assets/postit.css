@@ -1,0 +1,51 @@
+
+
+body{
+    padding: 10px;
+    background-color: gray;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+
+}
+
+body div {
+    margin-bottom:30px ;
+    margin-right: 22px;
+    text-align: center ;
+    font-size: 2.5rem;
+    transition: 1s all ease;
+  }
+.yellow{
+    background-color: rgb(245, 245, 152);
+    width: 250px;
+    height: 250px;
+    transform : rotate(-3deg);
+    -webkit-box-shadow: 3px 4px 5px 0px #000000; 
+box-shadow: 3px 4px 5px 0px #000000;
+    
+}
+.green{
+    background-color:rgb(177, 226, 177);
+    width: 250px;
+    height: 250px;
+    transform: rotate(5deg);
+    -webkit-box-shadow: 3px 4px 5px 0px #000000; 
+box-shadow: 3px 4px 5px 0px #000000;
+}
+.violetto{
+    background-color: rgb(187, 159, 187);
+    width: 250px;
+    height: 250px;
+    transform: rotate(-5deg);
+    -webkit-box-shadow: 3px 4px 5px 0px #000000; 
+box-shadow: 3px 4px 5px 0px #000000;
+
+}
+
+body div:hover{
+   
+    transform:scale(1.20);
+  }
+
+ 
