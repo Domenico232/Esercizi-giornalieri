@@ -121,6 +121,7 @@ footer{
     border-radius: 3px;
     display: inline;
     line-height: 2em;
+    width: 100%;
 
 }
 footer{
@@ -131,7 +132,4 @@ footer{
     border-bottom: solid 1px grey;
     margin-bottom: 5px;
     padding-bottom: 6%;
-}
-.slancio{
-    height: 100%;
 }
