@@ -1,7 +1,9 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body{
     margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
     
 }
 .boDy{
@@ -67,7 +69,8 @@ button{
     display: flex;
     flex-wrap: wrap;
     line-height: 15px;
-    justify-content: space-between;
+    gap: 1em;
+    border-bottom: 1px solid gray;
     margin-left: 10%;
 
 }
@@ -76,5 +79,38 @@ button{
     height: 150px;
     margin-bottom: 50px;
     margin-right: 50px;
+    line-height: 1.2em;
     
+}
+footer{
+    border-bottom: solid 1px grey;
+    float: right;
+    display: block;
+    width: 30%;
+    margin-right: 10%;
+}
+.paragrafi{
+    width: 40%;
+    display: inline-block;
+    margin-left: 10%;
+}
+.tonda{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.quadro{
+    border-radius:2px;
+    width: 20px;
+    height: 20px;
+}
+.cirio{
+    width: 35%;
+    height: 60%;
+}
+
+.paragrafi p {
+    width: 63%;
+    margin-bottom: 10%;
+    display: inline-block;
 }
