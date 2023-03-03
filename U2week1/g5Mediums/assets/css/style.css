@@ -126,6 +126,7 @@ footer{
 }
 footer{
     position: sticky;
+    top: 5em;
 }
 
 .foot{
