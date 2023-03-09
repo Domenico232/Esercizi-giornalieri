@@ -1,0 +1,11 @@
+
+
+$fonts: Arial, Helvetica, sans-serif;
+
+@mixin title-big() {
+    
+
+    h1{
+        color: $bg_hero;
+    }
+}

@@ -1,0 +1,75 @@
+
+@import'partials/Colori';
+@import'partials/Font';
+@import'partials/bottoni';
+
+@include title_big();
+
+body{
+    margin: 0 auto;
+
+    header{
+        background-color: $bg_hero;
+        color:$testo;
+        max-height: 30%;
+        border-bottom: 3px solid black;
+
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 50%;
+
+            img{
+                margin-left: 20%;
+            }
+
+            ul{
+            display: flex;
+            flex-direction: row;
+            align-items:flex-end;
+            justify-content: space-between;
+            width: 30%;
+            list-style: none;
+            animation: fadein ;
+            animation-duration: 3s;
+            }
+        }
+    }
+
+
+    main{
+        div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+             @include title_big();
+            @include bottonev();
+            .arancio{
+                background-color: $arancione;
+
+            }
+            .verde{
+                background-color: $verde;
+
+            }
+            .blu{
+                background-color: $blue;
+            }
+        }
+    }
+}
+
+@keyframes fadein{
+    0%{
+       opacity:0; 
+       
+    }
+   
+
+    100%{
+        opacity:1;
+    }
+}

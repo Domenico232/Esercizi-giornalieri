@@ -1,0 +1,20 @@
+@mixin bottonev(){
+       
+    button{ 
+     border-radius: 3px;
+     border: none;
+     color: azure;
+     width: 5%;
+     height: 30%;
+     margin: 1%;
+
+    }
+    button:hover{
+         box-shadow: 5px 5px 5px 5px black;
+         width: 6%;
+    }
+    button:active{
+         width: 4%;
+         box-shadow:3px 3px 3px 3px purple;
+    }
+ }

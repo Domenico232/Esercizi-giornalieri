@@ -1,0 +1,74 @@
+h1 {
+  color: #640fc5;
+}
+
+body {
+  margin: 0 auto;
+}
+body header {
+  background-color: #640fc5;
+  color: #f4f4f4;
+  max-height: 30%;
+  border-bottom: 3px solid black;
+}
+body header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+body header nav img {
+  margin-left: 20%;
+}
+body header nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 30%;
+  list-style: none;
+  animation: fadein;
+  animation-duration: 3s;
+}
+body main div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main div h1 {
+  color: #640fc5;
+}
+body main div button {
+  border-radius: 3px;
+  border: none;
+  color: azure;
+  width: 5%;
+  height: 30%;
+  margin: 1%;
+}
+body main div button:hover {
+  box-shadow: 5px 5px 5px 5px black;
+  width: 6%;
+}
+body main div button:active {
+  width: 4%;
+  box-shadow: 3px 3px 3px 3px purple;
+}
+body main div .arancio {
+  background-color: #ff8700;
+}
+body main div .verde {
+  background-color: #4caf50;
+}
+body main div .blu {
+  background-color: blue;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
