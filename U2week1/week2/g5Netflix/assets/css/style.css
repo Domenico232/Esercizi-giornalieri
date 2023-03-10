@@ -1,4 +1,7 @@
-
+main{
+    margin-left: 50px;
+    margin-top: 30px;
+}
 .cerca{
     background-color: rgb(51, 51, 51);
     border: none;
@@ -33,12 +36,15 @@
 }
 
 .immagini div:hover{
-    scale: 1.2;
-    transition: 1s;
+    scale: 1.1;
+    transition: 0.5s;
 }
 main div{
     margin-bottom: 30px;
 }
 .linko{
     text-decoration: none;
+}
+.carousel-inner{
+   height: 100%;
 }

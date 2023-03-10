@@ -66,3 +66,16 @@ main div h1{
 .bottoni3{
     text-align: center;
 }
+
+@media screen and (min-width:300px){
+    main{
+        margin: 0;
+    }
+}
+
+@media screen and (min-width:750px){
+    main{
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
