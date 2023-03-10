@@ -1,0 +1,68 @@
+header nav{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+main{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+main div h1{
+    text-align: left;
+    border-bottom: 1px solid gray;
+
+}
+
+.avatar{
+    text-align: left;
+    width: 100%;
+
+}
+.conte{
+    margin-top: 15px;
+    width: 50%;
+    margin-right: 0;
+}
+.diopo{
+    border-bottom: 1px solid gray;
+    margin-top: 15px;
+}
+.ges2{
+    border-bottom: 1px solid grey;
+}
+.labello{
+    border-radius: 1px solid;
+    background-color: darkgray;
+    color: white;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.labello span{
+    margin-left: 5px;
+}
+
+.labello2{
+    border-radius: 1px solid;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    width: 50%;
+    margin-bottom: 30px;
+    display: block;
+    text-align: center;
+}
+.labello2 span{
+    margin-left: 5px;
+}
+.edit{
+    border-color: grey;
+    border-radius: 2px;
+}
+.edit span{
+    color: grey;
+}
+.terzo{
+    margin-bottom: 15px;
+}
+.bottoni3{
+    text-align: center;
+}

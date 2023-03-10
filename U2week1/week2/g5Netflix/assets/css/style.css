@@ -1,0 +1,44 @@
+
+.cerca{
+    background-color: rgb(51, 51, 51);
+    border: none;
+}
+.ges{
+    border: none;
+}
+.rico{
+    margin-left: 0;
+}
+.inline{
+    display: inline;
+    margin-right: 5px;
+}
+
+.bottone2{
+    border: none;
+}
+
+.immagini{
+    display: flex;
+    width: 100%;
+
+
+}
+.immagini div{
+    width: 50%;
+    margin-right: 5px;
+}
+.image{
+    width: 100%;
+}
+
+.immagini div:hover{
+    scale: 1.2;
+    transition: 1s;
+}
+main div{
+    margin-bottom: 30px;
+}
+.linko{
+    text-decoration: none;
+}
