@@ -174,9 +174,7 @@ for (let index = 0; index < gesu.length; index++) {
 
 function funzioneDaEseguire(classe) {
 
-    let text = classe.toString();
-    console.log(text)
-    let elemento = document.getElementById(text);
+    let elemento = document.getElementById(classe);
     console.log(elemento)
     elemento.classList.add('d-none');
 }
