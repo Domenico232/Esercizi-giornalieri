@@ -26,7 +26,9 @@ for (let index = 0; index < gesu.length; index++) {
     const element = gesu[index].src.original;
     const ciccio = gesu[index].id;
     const fotogra = gesu[index].photographer;
-    img.innerHTML += ` <div class="col-md-4">
+    let classe = ([index]);
+
+    img.innerHTML += ` <div class="col-md-4 ${classe}">
     <div class="card mb-4 shadow-sm">
       <img src="${element}" alt="">
       <div class="card-body">
@@ -41,8 +43,8 @@ for (let index = 0; index < gesu.length; index++) {
             <button type="button" class="btn btn-sm btn-outline-secondary">
               View
             </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">
-              Edit
+            <button type="button" class="btn btn-sm btn-outline-secondary" id='hide'>
+              hide
             </button>
           </div>
           <small class="text-muted">${ciccio}</small>
@@ -51,10 +53,15 @@ for (let index = 0; index < gesu.length; index++) {
     </div>
   </div>`
     console.log(element)
+    console.log(classe)
 }
 }
 
 fetchata();
+
+
+
+
 
 
 
