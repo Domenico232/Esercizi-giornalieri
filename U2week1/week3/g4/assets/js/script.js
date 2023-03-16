@@ -5,6 +5,7 @@ const URLu = 'https://api.pexels.com/v1/search?query=Tigers';
 const URLi = 'https://api.pexels.com/v1/search?query=Pears';
 const btn1 = document.getElementById('load');
 const btn2 = document.getElementById('loadnew');
+let hider = document.getElementById('hide0')
 
 async function fetchata(){
 
@@ -28,7 +29,7 @@ for (let index = 0; index < gesu.length; index++) {
     const fotogra = gesu[index].photographer;
     let classe = ([index]);
 
-    img.innerHTML += ` <div class="col-md-4 ${classe}">
+    img.innerHTML += ` <div class="col-md-4"  id="${classe}">
     <div class="card mb-4 shadow-sm">
       <img src="${element}" alt="">
       <div class="card-body">
@@ -43,7 +44,7 @@ for (let index = 0; index < gesu.length; index++) {
             <button type="button" class="btn btn-sm btn-outline-secondary">
               View
             </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" id='hide'>
+            <button type="button" class="btn btn-sm btn-outline-secondary"  onclick="funzioneDaEseguire(${classe})" id='hide'>
               hide
             </button>
           </div>
@@ -54,10 +55,15 @@ for (let index = 0; index < gesu.length; index++) {
   </div>`
     console.log(element)
     console.log(classe)
+    
 }
+
 }
 
 fetchata();
+
+
+
 
 
 
@@ -86,7 +92,8 @@ for (let index = 0; index < gesu.length; index++) {
     const element = gesu[index].src.original;
     const ciccio = gesu[index].id;
     const fotogra = gesu[index].photographer;
-    img.innerHTML += ` <div class="col-md-4">
+    let classe = ([index]);
+    img.innerHTML += ` <div class="col-md-4"  id="${classe}">
     <div class="card mb-4 shadow-sm">
       <img src="${element}" alt="">
       <div class="card-body">
@@ -101,8 +108,8 @@ for (let index = 0; index < gesu.length; index++) {
             <button type="button" class="btn btn-sm btn-outline-secondary">
               View
             </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">
-              Edit
+            <button type="button" class="btn btn-sm btn-outline-secondary"  onclick="funzioneDaEseguire(${classe})" id='hide'>
+              hide
             </button>
           </div>
           <small class="text-muted">${ciccio}</small>
@@ -110,6 +117,8 @@ for (let index = 0; index < gesu.length; index++) {
       </div>
     </div>
   </div>`
+    console.log(element)
+    console.log(classe)
 }})
 
 
@@ -134,7 +143,8 @@ for (let index = 0; index < gesu.length; index++) {
     const element = gesu[index].src.original;
     const ciccio = gesu[index].id;
     const fotogra = gesu[index].photographer;
-    img.innerHTML += ` <div class="col-md-4">
+    let classe = ([index]);
+    img.innerHTML +=` <div class="col-md-4"  id="${classe}">
     <div class="card mb-4 shadow-sm">
       <img src="${element}" alt="">
       <div class="card-body">
@@ -149,8 +159,8 @@ for (let index = 0; index < gesu.length; index++) {
             <button type="button" class="btn btn-sm btn-outline-secondary">
               View
             </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">
-              Edit
+            <button type="button" class="btn btn-sm btn-outline-secondary"  onclick="funzioneDaEseguire(${classe})" id='hide'>
+              hide
             </button>
           </div>
           <small class="text-muted">${ciccio}</small>
@@ -158,9 +168,18 @@ for (let index = 0; index < gesu.length; index++) {
       </div>
     </div>
   </div>`
+    console.log(element)
+    console.log(classe)
 }})
 
+function funzioneDaEseguire(classe) {
 
+    let text = classe.toString();
+    console.log(text)
+    let elemento = document.getElementById(text);
+    console.log(elemento)
+    elemento.classList.add('d-none');
+}
 
 
 
