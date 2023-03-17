@@ -5,7 +5,7 @@ async function fetchata(){
 
     const response = await fetch(URLo,{
         headers: {
-            Authorization:['Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NzkwNDQ0MjksImV4cCI6MTY4MDI1NDAyOX0.SKDSxsb1AzOMvK_bZjuEqk2bmNaQvE5totKB1eZPxzg']
+            Authorization:['Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NzkwNjc0MDQsImV4cCI6MTY4MDI3NzAwNH0.bKg77ACTPce7yMb-D7RhYLiFnys2VcT1QKOPOffBhmQ']
         },
         
     
@@ -20,7 +20,6 @@ for (let index = 0; index < gesu.length; index++) {
     const element = gesu[index].imageUrl;
     const ciccio = gesu[index].price;
     const fotogra = gesu[index].name;
-    const desco = gesu[index].description
     const brando = gesu[index].brand
     let classe = ([index]);
 
@@ -30,7 +29,7 @@ for (let index = 0; index < gesu.length; index++) {
       <div class="card-body">
         <h5 class="card-title">${fotogra}</h5>
         <p class="card-text">
-          ${desco} <br>
+            Prodotto <br>
          <b> brand </b>: ${brando}
         </p>
         <div class="d-flex justify-content-between align-items-center">
@@ -38,9 +37,9 @@ for (let index = 0; index < gesu.length; index++) {
             <a href="./Backoffdel.html?Eventid=${gesu[index]._id}" type="button" class="btn btn-sm btn-outline-secondary">
               Modify
             </a>
-            <button type="button" class="btn btn-sm btn-outline-secondary"  onclick="funzioneDaEseguire(${classe})" id='hide'>
+            <a href='./details.html?_id=${gesu[index]._id}' type="button" class="btn btn-sm btn-outline-secondary">
               Buy
-            </button>
+            </a>
           </div>
           <b class="text-muted">${ciccio}$</b>
         </div>

@@ -14,7 +14,7 @@ const Btn = document.getElementById('invio');
     const response = await fetch(Urlw,{
         method:'GET',
         headers:{
-            Authorization:['Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NzkwNDQ0MjksImV4cCI6MTY4MDI1NDAyOX0.SKDSxsb1AzOMvK_bZjuEqk2bmNaQvE5totKB1eZPxzg']
+            Authorization:['Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NzkwNjc0MDQsImV4cCI6MTY4MDI3NzAwNH0.bKg77ACTPce7yMb-D7RhYLiFnys2VcT1QKOPOffBhmQ']
         },
     })
     jeni = await response.json()
@@ -46,7 +46,7 @@ Btn.addEventListener('click', async function dati() {
         method:'POST',
         headers:{
             'Content-Type' : 'application/json',
-            Authorization:['Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NzkwNDQ0MjksImV4cCI6MTY4MDI1NDAyOX0.SKDSxsb1AzOMvK_bZjuEqk2bmNaQvE5totKB1eZPxzg']
+            Authorization:['Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NzkwNjc0MDQsImV4cCI6MTY4MDI3NzAwNH0.bKg77ACTPce7yMb-D7RhYLiFnys2VcT1QKOPOffBhmQ']
             
         },
 
