@@ -17,7 +17,7 @@ const response = await fetch(Urlw + eventid,{
 
     document.getElementById('elemento').innerHTML += ': ' + dati.name;
 
-    document.getElementById('nome1').innerHTML += ': ' +   dati.name
+    document.querySelector('#nome').innerHTML += dati.name
 
     document.getElementById('desc1').innerHTML += ': ' + dati.description
 
