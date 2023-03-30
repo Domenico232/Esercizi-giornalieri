@@ -1,15 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import  Navbarre  from "./components/Navbarre";
+import fantasy from "./fantasy.json";
+import Searchbar from "./components/Searchbar";
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
+        <Navbarre />
       </header>
+        <Searchbar data={fantasy}/>
+       
     </div>
   );
+  
 }
-
+console.log(fantasy)
 export default App;
