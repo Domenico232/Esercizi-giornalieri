@@ -22,7 +22,6 @@ class Navbarre extends Component{
                        
                       </Nav>
                       <img src="https://static.vecteezy.com/system/resources/previews/000/420/855/non_2x/avatar-icon-vector-illustration.jpg" alt="avat" className="avatar"/>
-                      <input type="search" name="" id="" className="search bg-dark text-white" />
                     </Navbar.Collapse>
                   </Container>
                 </Navbar>

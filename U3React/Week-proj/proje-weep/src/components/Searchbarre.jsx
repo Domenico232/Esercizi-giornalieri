@@ -1,52 +1,70 @@
-import React, { useState } from "react";
+import React, { Component} from "react";
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 
-function Searchbar({}) {
-    
-const [filteredData, setFilteredData] = useState([]);
 
-    console.log(filteredData)
-const handleFilter =  (event) =>{
-    const searchWord = event.target.value
-    console.log(searchWord);
+
+
+class Searchbarre extends Component {
     
-    const newFilter = data.filter((data) => {
-      return data.title.toLowerCase().includes(searchWord.toLowerCase());
-        
-    })
-    setFilteredData(newFilter)
-    console.log(setFilteredData(newFilter))
-    
+ state = {
+    datifilms : []
 }
+
+refreshData(e) {
+    const word = e.target.value;
+    const url = `https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=${word}`;
+    const bello = document.getElementById('cirio') 
+
+      async function name() {
+        
+            const response =  await fetch(url)
+            const movies =  await response.json()
+            console.log(movies)
+            let lello = movies.Search;
+                bello.innerHTML="";
+            for (let index = 0; index < lello.length; index++) {
+                bello.innerHTML += `<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="${lello[index].Poster}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">${lello[index].Title}</h5>
+                </div>
+              </div>`
+              console.log(bello)
+               
+                
+            }}
+      name();
+  } 
+
+
+
+  
+render(){
     return (
         <div className="search">
-        <input type="text" placeholder="Qui?" onChange={handleFilter}/> 
+        <input type="text" placeholder="Qui?" className="search bg-dark text-white" onChange={this.refreshData}/> 
 
         
-        <div className="dataResult row" > 
-          {filteredData.map((value, key)=>{
-            
-             
-            return (
-              <Card style={{ width: '18rem' }}  key={value.asin} >
-              <Card.Img variant="top" src={value.img}/>
-              <Card.Body>
-                <Card.Title>{value.title}</Card.Title>
-                <Card.Text>
-                  {value.category}
-                </Card.Text>
-                <Button variant="primary">BUY</Button> <span>{value.price}$</span>
-              </Card.Body>
-              </Card>
-            )
-           
-           
-          })}  
+        <div className="dataResult row" id="cirio" > 
+
+         
            </div>
           
         </div>
     )
-    }
+    }}
 
-export default Searchbar
+export default Searchbarre;
+
+/*getfilms = async(dati) =>  {
+    try {
+       const response =  await fetch(Url+dati)
+       const movies =  await response.json()
+       this.setState({
+        datifilms : movies.Search
+       })
+    } catch (error) {
+        console.log(error)
+    }
+}*/

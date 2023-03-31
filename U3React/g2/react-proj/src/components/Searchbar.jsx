@@ -7,6 +7,7 @@ function Searchbar({data}) {
     
 const [filteredData, setFilteredData] = useState([]);
     console.log(filteredData)
+    
 const handleFilter =  (event) =>{
     const searchWord = event.target.value
     console.log(searchWord);

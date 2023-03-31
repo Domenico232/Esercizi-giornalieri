@@ -3,6 +3,7 @@ import './App.css';
 import FirstCarousel from './components/FirstCarousel';
 import SecondCarousel from './components/SecondCarousel';
 import ThirdCarousel from './components/thirdCarousel';
+import Searchbarre from './components/Searchbarre';
 import Navbarre from './components/Navbarre'
 import Footerr from './components/Footerr';
 function App() {
@@ -18,6 +19,9 @@ function App() {
         <option>Romance</option>
         <option>Comic</option>
         </select></div>
+        <div>
+          <Searchbarre />
+        </div>
       <div>
         <FirstCarousel title='Serie del momento'/>
       </div>
