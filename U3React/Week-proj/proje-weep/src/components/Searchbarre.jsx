@@ -24,10 +24,10 @@ refreshData(e) {
             let lello = movies.Search;
                 bello.innerHTML="";
             for (let index = 0; index < lello.length; index++) {
-                bello.innerHTML += `<div class="card" style="width: 18rem;">
+                bello.innerHTML += `<div class="card bg-dark" style="width: 18rem;">
                 <img class="card-img-top" src="${lello[index].Poster}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">${lello[index].Title}</h5>
+                <div class="card-body bg-dark">
+                  <h5 class="card-title text-white">${lello[index].Title}</h5>
                 </div>
               </div>`
               console.log(bello)
