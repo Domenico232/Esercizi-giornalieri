@@ -3,6 +3,10 @@
   background-color: black;
   color:white;
 }
+.carim:hover{
+  transform: scale(1.1);
+  transition: all 1s;
+}
 
 .avatar{
   width: 35px;

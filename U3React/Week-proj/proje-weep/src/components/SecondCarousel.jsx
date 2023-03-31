@@ -33,7 +33,7 @@ class SecondCarousel extends Component{
 
     getHarryfilms = async() =>  {
             try {
-               const response = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=harry%20potter")
+               const response = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=lord%20rings")
                const movies = await response.json()
                console.log(movies)
                this.setState({
@@ -56,7 +56,7 @@ class SecondCarousel extends Component{
 
             {this.state.films.map((e)=>{
                     return(
-                    <div key={e.imdbID}><img src={e.Poster} alt="" width={400}/></div>
+                    <div key={e.imdbID} className="carim"><img src={e.Poster} alt="" width={400}/></div>
                     )
             })}
           

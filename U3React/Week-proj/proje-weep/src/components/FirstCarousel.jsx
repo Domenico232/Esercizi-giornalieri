@@ -56,7 +56,7 @@ class FirstCarousel extends Component{
 
             {this.state.films.map((e)=>{
                     return(
-                    <div key={e.imdbID}><img src={e.Poster} alt="" width={400}/></div>
+                    <div key={e.imdbID} className="carim"><img src={e.Poster} alt="" width={400}/></div>
                     )
             })}
           
