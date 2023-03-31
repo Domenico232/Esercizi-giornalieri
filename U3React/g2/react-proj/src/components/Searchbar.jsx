@@ -6,14 +6,17 @@ import Button from "react-bootstrap/Button"
 function Searchbar({data}) {
     
 const [filteredData, setFilteredData] = useState([]);
-
+    console.log(filteredData)
 const handleFilter =  (event) =>{
     const searchWord = event.target.value
     console.log(searchWord);
-    const newFilter = data.filter((value) => {
-        return value.title.toLowerCase().includes(searchWord.toLowerCase());
-    });
+    const newFilter = data.filter((data) => {
+      return data.title.toLowerCase().includes(searchWord.toLowerCase());
+        
+    })
     setFilteredData(newFilter)
+    console.log(setFilteredData(newFilter))
+    
 }
     return (
         <div className="search">
