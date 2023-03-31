@@ -1,6 +1,8 @@
 
 import './App.css';
 import FirstCarousel from './components/FirstCarousel';
+import SecondCarousel from './components/SecondCarousel';
+import ThirdCarousel from './components/thirdCarousel';
 import Navbarre from './components/Navbarre'
 import Footerr from './components/Footerr';
 function App() {
@@ -17,7 +19,14 @@ function App() {
         <option>Comic</option>
         </select></div>
       <div>
-        <FirstCarousel Url="https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=harry%20potter"/>
+        <FirstCarousel title='Serie del momento'/>
+      </div>
+      <div>
+        <SecondCarousel title="Altri"/>
+      </div>
+
+      <div>
+        <ThirdCarousel title="Per te"/>
       </div>
 
       <div>

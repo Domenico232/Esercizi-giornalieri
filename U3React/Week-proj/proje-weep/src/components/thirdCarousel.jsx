@@ -22,7 +22,7 @@ const responsive = {
     }
   };
 
-class FirstCarousel extends Component{
+class ThirdCarousel extends Component{
     state = {
         films:[]
     }
@@ -34,10 +34,10 @@ class FirstCarousel extends Component{
     getHarryfilms = async() =>  {
             try {
                const response = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=harry%20potter")
-               const Harrymovies = await response.json()
-               console.log(Harrymovies)
+               const movies = await response.json()
+               console.log(movies)
                this.setState({
-                films : Harrymovies.Search
+                films : movies.Search
                })
             } catch (error) {
                 console.log(error)
@@ -51,7 +51,7 @@ class FirstCarousel extends Component{
         
         return (
        <div className="mt-5">
-        <h2>Serie del momento</h2>
+        <h2>{this.props.title}</h2>
         <Carousel responsive={responsive}>
 
             {this.state.films.map((e)=>{
@@ -68,4 +68,4 @@ class FirstCarousel extends Component{
         }
     }
 
-export default FirstCarousel
+export default ThirdCarousel
