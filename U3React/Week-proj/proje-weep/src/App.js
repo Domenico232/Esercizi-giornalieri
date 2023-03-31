@@ -2,6 +2,7 @@
 import './App.css';
 import FirstCarousel from './components/FirstCarousel';
 import Navbarre from './components/Navbarre'
+import Footerr from './components/Footerr';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,10 @@ function App() {
         </select></div>
       <div>
         <FirstCarousel Url="https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=harry%20potter"/>
+      </div>
+
+      <div>
+        <Footerr />
       </div>
     </div>
   );
