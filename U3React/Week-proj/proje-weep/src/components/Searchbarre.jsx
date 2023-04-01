@@ -43,13 +43,6 @@ render(){
     return (
         <div className="search">
         <input type="text" placeholder="Qui?" className="search bg-dark text-white" onChange={this.refreshData}/> 
-
-        
-        <div className="dataResult row" id="cirio" > 
-
-         
-           </div>
-          
         </div>
     )
     }}

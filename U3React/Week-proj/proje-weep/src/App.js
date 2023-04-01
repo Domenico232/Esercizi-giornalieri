@@ -1,7 +1,6 @@
 
 import './App.css';
 import FirstCarousel from './components/FirstCarousel';
-import Searchbarre from './components/Searchbarre';
 import Navbarre from './components/Navbarre'
 import Footerr from './components/Footerr';
 function App() {
@@ -17,8 +16,12 @@ function App() {
         <option>Romance</option>
         <option>Comic</option>
         </select></div>
+        <div className="dataResult row" id="cirio" > 
+
+         
+           </div>
         <div>
-          <Searchbarre />
+
         </div>
       <div>
         <FirstCarousel title='Serie del momento' APIFilms="https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=harry%20potter"/>

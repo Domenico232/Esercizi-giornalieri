@@ -2,6 +2,7 @@ import { Component } from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Searchbarre from './components/Searchbarre';
 
 
 class Navbarre extends Component{
@@ -22,6 +23,7 @@ class Navbarre extends Component{
                        
                       </Nav>
                       <img src="https://static.vecteezy.com/system/resources/previews/000/420/855/non_2x/avatar-icon-vector-illustration.jpg" alt="avat" className="avatar"/>
+                      <Searchbarre/>
                     </Navbar.Collapse>
                   </Container>
                 </Navbar>
