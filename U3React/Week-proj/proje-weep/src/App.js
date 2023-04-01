@@ -1,8 +1,6 @@
 
 import './App.css';
 import FirstCarousel from './components/FirstCarousel';
-import SecondCarousel from './components/SecondCarousel';
-import ThirdCarousel from './components/thirdCarousel';
 import Searchbarre from './components/Searchbarre';
 import Navbarre from './components/Navbarre'
 import Footerr from './components/Footerr';
@@ -23,15 +21,15 @@ function App() {
           <Searchbarre />
         </div>
       <div>
-        <FirstCarousel title='Serie del momento'/>
+        <FirstCarousel title='Serie del momento' APIFilms="https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=harry%20potter"/>
       </div>
       <div>
-        <SecondCarousel title="Altri"/>
+        <FirstCarousel title='Altri' APIFilms="https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=lord%20rings"/>
       </div>
-
       <div>
-        <ThirdCarousel title="Per te"/>
+        <FirstCarousel title='Per Te' APIFilms="https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=fast%20furious"/>
       </div>
+     
 
       <div>
         <Footerr />

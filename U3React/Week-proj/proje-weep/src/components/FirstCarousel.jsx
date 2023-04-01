@@ -33,7 +33,7 @@ class FirstCarousel extends Component{
 
     getHarryfilms = async() =>  {
             try {
-               const response = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=d3e16d80&s=harry%20potter")
+               const response = await fetch(this.props.APIFilms)
                const Harrymovies = await response.json()
                console.log(Harrymovies)
                this.setState({
@@ -51,7 +51,7 @@ class FirstCarousel extends Component{
         
         return (
        <div className="mt-5">
-        <h2>Serie del momento</h2>
+        <h2>{this.props.title}</h2>
         <Carousel responsive={responsive}>
 
             {this.state.films.map((e)=>{
