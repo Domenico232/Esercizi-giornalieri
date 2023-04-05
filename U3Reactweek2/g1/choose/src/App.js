@@ -20,6 +20,7 @@ function App() {
          <Route path="/" element={<Home />} />
          <Route path='/About' element={<About/>}/>
          <Route path='/TvshowsP' element={<Tvshows/>}/>
+         <Route path='/Moviedetails/:MovieID' element={<Moviedetails/>}/>
        </Routes>
        <Footerr />
        </div>
