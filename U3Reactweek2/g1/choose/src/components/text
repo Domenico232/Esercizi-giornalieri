@@ -1,0 +1,23 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <div className="App">
+    <header className="App-header">
+      <Navbarre />
+    </header>
+ 
+ 
+ 
+ 
+ 
+ 
+ <div>
+        <Footerr />
+      </div>
+    </div>
