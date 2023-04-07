@@ -1,5 +1,5 @@
 body{
-    background-image: url("https://img.freepik.com/free-vector/rainfall-drops-black-background_1017-33594.jpg?w=1380&t=st=1680863125~exp=1680863725~hmac=a2dd38932f06053acc10e8895686528ec62990596ef38d00e9bc950588bb6d5a");
+    background-image: url("../public/SL-042221-42420-03.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -7,4 +7,11 @@ body{
 }
 .Logo{
     color:azure
+}
+.listaris{
+    height: 30px;
+    background-color: azure;
+}
+footer{
+    margin-top: 40%;
 }

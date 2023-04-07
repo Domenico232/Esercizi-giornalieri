@@ -1,5 +1,9 @@
+import Container from "react-bootstrap/esm/Container";
 
 
 export default function Detailpage(params) {
-    return(<div></div>)
+    
+    return(<Container>
+
+    </Container>)
 }
