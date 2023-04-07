@@ -1,38 +1,10 @@
-.App {
-  text-align: center;
+body{
+    background-image: url("https://img.freepik.com/free-vector/rainfall-drops-black-background_1017-33594.jpg?w=1380&t=st=1680863125~exp=1680863725~hmac=a2dd38932f06053acc10e8895686528ec62990596ef38d00e9bc950588bb6d5a");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Logo{
+    color:azure
 }
