@@ -31,7 +31,7 @@ export default function Research(){
         
         return ( 
          <div>
-         <input type="search" name="" onChange={handleresearch} />
+         <input type="search" name="" placeholder="Insert city" onChange={handleresearch} />
       
          </div>
       )
