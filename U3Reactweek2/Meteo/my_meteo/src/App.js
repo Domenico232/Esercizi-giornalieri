@@ -6,11 +6,9 @@ import Footerr from './components/Footerr';
 import Detailpage from "./components/Detailpage"
 import Homepage from './components/Homepage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 
 
 function App() {
-  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div>
