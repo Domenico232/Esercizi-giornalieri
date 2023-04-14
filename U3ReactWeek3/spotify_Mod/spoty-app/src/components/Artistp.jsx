@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 
@@ -5,10 +6,69 @@ import { useParams } from "react-router";
 const Artistp = () =>{
     const urlid = useParams();
     console.log(urlid)
+    const [albums, setalbums] = useState();
 
-    
+   const loadata = async () => {
+        
 
+        let headers = new Headers({
+          "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+          "X-RapidAPI-Key":
+            "222902beabmshb95a65b737cead6p1f3ac9jsn23ced94c0d20",
+        });
 
+        try {
+          let response = await fetch(
+            "https://striveschool-api.herokuapp.com/api/deezer/artist/" +
+              urlid.id,
+            {
+              method: "GET",
+              headers,
+            }
+          );
+
+          if (response.ok) {
+            let artist = await response.json();
+
+            // displaying the playButton
+            let playButton = document.querySelector("#playButton");
+            playButton.classList.remove("d-none");
+            playButton.classList.add("d-inline");
+
+            // displaying the followButton
+            let followButton = document.querySelector("#followButton");
+            followButton.classList.remove("d-none");
+            followButton.classList.add("d-inline");
+
+            // setting the artist name
+            let titleMain = document.querySelector(".titleMain");
+            titleMain.innerHTML = artist.name;
+
+            // setting the followers section
+            let followers = document.querySelector("#followers");
+            followers.innerText = artist.nb_fan + " followers";
+
+            let tracksResponse = await fetch(
+              // await the fetch of the artist songs
+              "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
+                artist.name,
+              {
+                method: "GET",
+                headers,
+              }
+            );
+            let responsere = await tracksResponse.json()
+                console.log(responsere)
+        }} catch (exception) {
+          // ex.: Url is not correct, Internal Server Error
+          document.querySelector("#apiLoaded").innerHTML = exception;
+        }
+      };
+
+      
+      useEffect(()=>{
+        loadata()
+      },[])
     return(<>
         <div className="container-fluid">
           <div className="row">
