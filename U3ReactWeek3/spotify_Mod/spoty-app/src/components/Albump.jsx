@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 
 
 
 const Albump = () => {
     const urlid = useParams()
-    const [album, setalbum] = useState([])
-    function song(track) {
+    const [album, setalbum] = useState({tracks:{
+        data : []
+    }})
+
+    /*function song(track) {
         return `
             <div class="py-3 trackHover">
                 <a href="#" class="card-title trackHover px-3" style="color:white" >${track.title
@@ -33,7 +37,7 @@ const Albump = () => {
             <div class="mt-4 text-center">
                 <button id="btnPlay" class="btn btn-success" type="button">Play</button>
             </div>`;
-    }
+    }*/
 
     const fetchata23 = async () => {
         
@@ -149,16 +153,26 @@ const Albump = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-3 pt-5 text-center" id="img-container" />
+                            <div className="col-md-3 pt-5 text-center" id="img-container"> <img src={album.cover} alt="" /> </div>
                             <div className="col-md-8 p-5">
                                 <div className="row">
                                     <div className="col-md-10 mb-5" id="trackList">
-                                        {console.log(album.tracks.data)}
 
-                                {album.tracks.data ? <div>{ (album.tracks.data).map((e)=>{
-                                            return (<div>{e.title} </div>)})  }</div> : ''}
-                                        
+                                        {console.log(album)}
+                                        {album.tracks.data ? <div>{ (album.tracks.data).map((e)=>{
+                                            return (<div> <img src={album.cover_big} class="card-img img-fluid" alt="Album" />
+                                            <div class="mt-4 text-center">
+                                                <p class="album-title">{e.title}</p>
+                                            </div>
+                                            <div class="text-center">
+                                                <Link to={"/artist/"} class="artist-name">{e.artist.name}</Link>
+                                            </div>
+                                            <div class="mt-4 text-center">
+                                                <button id="btnPlay" class="btn btn-success" type="button">Play</button>
+                                            </div></div>)})  }</div> : ''}
+
                                         </div> 
+                                        
                                 </div>
                             </div>
                         </div>
