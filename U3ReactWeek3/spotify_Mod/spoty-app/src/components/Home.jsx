@@ -1,6 +1,7 @@
 import React from "react"
 import {useState, useEffect} from "react"
 import { Link } from "react-router-dom"
+import Albump from "./Albump"
 
  const Home = () => {
     const [Songsearch, setSongsearch] = useState([])
@@ -131,7 +132,7 @@ import { Link } from "react-router-dom"
 
 
 
-        while (rockRandomArtists.length < 4) {
+        while (rockRandomArtists.length < 1) {
           // pushes elements inside the array until it has 4 strings
           let artist =
             rockArtists[Math.floor(Math.random() * rockArtists.length)] // select an element from the array with an index between 0 and 7
@@ -141,14 +142,14 @@ import { Link } from "react-router-dom"
           }
         }
 
-        while (popRandomArtists.length < 4) {
+        while (popRandomArtists.length < 1) {
           let artist = popArtists[Math.floor(Math.random() * popArtists.length)]
           if (!popRandomArtists.includes(artist)) {
             popRandomArtists.push(artist)
           }
         }
 
-        while (hipHopRandomArtists.length < 4) {
+        while (hipHopRandomArtists.length < 1) {
           let artist =
             hipHopArtists[Math.floor(Math.random() * hipHopArtists.length)]
           if (!hipHopRandomArtists.includes(artist)) {
@@ -272,20 +273,16 @@ import { Link } from "react-router-dom"
                 <div className="col-10">
                   <div id="searchResults" style={{ display: "none" }}>
                     <h2>Search Results </h2>
-                    {console.log("ciao",Songsearch)}
-                    {console.log("artisti rocks",newrockArtists)}
-                    {console.log("artisti pop",newpopArtists)}
-                    {console.log("artisti hip hop",newhipHopArtists)}
                     {Songsearch ? <div>{  Songsearch.map((e)=>(
                             console.log("sono e",e),
                             <div classN="col text-center" id={e.id}>
-                            <Link to="/">
+                            <Link to={"/album/"+ e.album.id}>
                               <img classN="img-fluid" src={
                                e.album.cover_medium
                               } alt="1" />
                             </Link>
                             <p>
-                              <Link to="/">
+                              <Link to={"/album/"+ e.album.id}>
                                 Album: {
                                   e.album.title.length < 16
                                     ? `${e.album.title}`
@@ -312,13 +309,13 @@ import { Link } from "react-router-dom"
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                       id="rockSection">{  newrockArtists.map((e)=>(
                             <div classN="col text-center" key={e.id}>
-                            <Link to="/">
+                            <Link to={"/album/"+ e.album.id}>
                               <img classN="img-fluid" src={
                                e.album.cover_medium
                               } alt="1" />
                             </Link>
                             <p>
-                              <Link to="/">
+                              <Link to={"/album/"+ e.album.id}>
                                 Album: {
                                   e.album.title.length < 16
                                     ? `${e.album.title}`
@@ -350,13 +347,13 @@ import { Link } from "react-router-dom"
                       id="popSection"
                     >{  newpopArtists.map((e)=>(
                         <div classN="col text-center" key={e.id}>
-                        <Link to="/">
+                        <Link to={"/album/"+ e.album.id}>
                           <img classN="img-fluid" src={
                            e.album.cover_medium
                           } alt="1" />
                         </Link>
                         <p>
-                          <Link to="/">
+                          <Link to={"/album/"+ e.album.id}>
                             Album: {
                               e.album.title.length < 16
                                 ? `${e.album.title}`
@@ -376,18 +373,18 @@ import { Link } from "react-router-dom"
                 <div className="col-10">
                   <div id="hiphop">
                     <h2>#HipHop</h2>
-                    <div
+                     <div
                       className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                       id="popSection"
                     >{  newhipHopArtists.map((e)=>(
                         <div classN="col text-center" key={e.id}>
-                        <Link to="/">
+                        <Link to={"/album/"+ e.album.id}>
                           <img classN="img-fluid" src={
                            e.album.cover_medium
                           } alt="1" />
                         </Link>
                         <p>
-                          <Link to="/">
+                          <Link to={"/album/"+ e.album.id}>
                             Album: {
                               e.album.title.length < 16
                                 ? `${e.album.title}`
