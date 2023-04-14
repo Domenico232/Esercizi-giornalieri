@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-
+import { Link } from "react-router-dom";
 
 
 const Artistp = () =>{
     const urlid = useParams();
     console.log(urlid)
-    const [albums, setalbums] = useState();
+    const [albums, setalbums] = useState({data:[]});
 
    const loadata = async () => {
         
@@ -58,7 +58,7 @@ const Artistp = () =>{
               }
             );
             let responsere = await tracksResponse.json()
-                console.log(responsere)
+                setalbums(responsere)
         }} catch (exception) {
           // ex.: Url is not correct, Internal Server Error
           document.querySelector("#apiLoaded").innerHTML = exception;
@@ -169,7 +169,29 @@ const Artistp = () =>{
                     <h2 className="text-white font-weight-bold">Tracks</h2>
                   </div>
                   <div className="pt-5 mb-5">
-                    <div className="row" id="apiLoaded" />
+                    {console.log(albums)}
+                    <div className="row" id="apiLoaded"> <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                      id="rockSection">{  albums.data.map((e)=>(
+                            <div classN="col text-center" key={e.id}>
+                            <Link to={"/album/"+ e.album.id}>
+                              <img classN="img-fluid" src={
+                               e.album.cover_medium
+                              } alt="1" />
+                            </Link>
+                            <p>
+                              <Link to={"/album/"+ e.album.id}>
+                                Album: {
+                                  e.album.title.length < 16
+                                    ? `${e.album.title}`
+                                    : `${e.album.title.substring(0, 16)}...`
+                                }
+                              </Link>
+                              <Link to="/">
+                                Artist: {e.artist.name}
+                              </Link>
+                            </p>
+                          </div>
+                          ))}</div> </div>
                   </div>
                 </div>
               </div>
