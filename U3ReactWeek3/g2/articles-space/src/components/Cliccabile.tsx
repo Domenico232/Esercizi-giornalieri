@@ -21,7 +21,7 @@ export const Cliccabile = () =>{
   const par:any= useParams()
 
   const [Articolisingoli, setArticoliS] = useState<Spacedw>() 
-
+  console.log("sono articolo",Articolisingoli)
   console.log(par)
 
   const fetchata2 = async() =>{
@@ -31,7 +31,7 @@ export const Cliccabile = () =>{
             const risultati = await response.json();
             setArticoliS(risultati)
             console.log(risultati)
-            console.log(Articolisingoli)
+            
         }
     } catch (error) {
         console.log("error",error)
