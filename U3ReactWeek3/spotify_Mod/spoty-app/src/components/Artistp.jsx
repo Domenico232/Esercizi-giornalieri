@@ -1,7 +1,14 @@
+import { useParams } from "react-router";
 
 
 
 const Artistp = () =>{
+    const urlid = useParams();
+    console.log(urlid)
+
+    
+
+
     return(<>
         <div className="container-fluid">
           <div className="row">
@@ -157,4 +164,4 @@ const Artistp = () =>{
 }
 
 
-export default Artistp();
+export default Artistp;

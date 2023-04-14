@@ -160,12 +160,11 @@ const Albump = () => {
 
                                         {console.log(album)}
                                         {album.tracks.data ? <div>{ (album.tracks.data).map((e)=>{
-                                            return (<div> <img src={album.cover_big} class="card-img img-fluid" alt="Album" />
-                                            <div class="mt-4 text-center">
+                                            return (<div><div class="mt-4 text-center">
                                                 <p class="album-title">{e.title}</p>
                                             </div>
                                             <div class="text-center">
-                                                <Link to={"/artist/"} class="artist-name">{e.artist.name}</Link>
+                                                <Link to={"/artist/"+ album.artist.id} class="artist-name">{e.artist.name}</Link>
                                             </div>
                                             <div class="mt-4 text-center">
                                                 <button id="btnPlay" class="btn btn-success" type="button">Play</button>
