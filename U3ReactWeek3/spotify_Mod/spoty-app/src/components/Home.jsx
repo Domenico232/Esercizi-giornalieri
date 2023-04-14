@@ -4,6 +4,12 @@ import { Link } from "react-router-dom"
 
  const Home = () => {
     const [Songsearch, setSongsearch] = useState([])
+    const [newrockArtists, setrockArtists] = useState([])
+    const [newpopArtists, setpopArtists] = useState([])
+    const [newhipHopArtists, sethipHopArtists] = useState([])
+
+
+
     let rockArtists = [
         'queen',
         'u2',
@@ -75,32 +81,7 @@ import { Link } from "react-router-dom"
         }
       }
 
-      function albumCard(songInfo) {
-        // songInfo represents the info for the current song
-        // creating the wrapper div
-        return `
-          <div class="col text-center" id=${songInfo.id}>
-            <a href="/album_page.html?id=${songInfo.album.id}">
-              <img class="img-fluid" src=${
-                songInfo.album.cover_medium
-              } alt="1" />
-            </a>
-            <p>
-              <a href="/album_page.html?id=${songInfo.album.id}">
-                Album: "${
-                  songInfo.album.title.length < 16
-                    ? `${songInfo.album.title}`
-                    : `${songInfo.album.title.substring(0, 16)}...`
-                }"<br>
-              </a>
-              <a href="/artist_page.html?id=${songInfo.artist.id}">
-                Artist: ${songInfo.artist.name}
-              </a>
-            </p>
-          </div>`
-      }
-
-    /* const  handleArtist = async (artistName, domQuerySelector) => {
+     const  handleArtist = async (artistName, sezione) => {
         // artistName = "eminem", "metallica", etc...
         // domQuerySelector = "#rockSection" etc...
         try {
@@ -115,8 +96,24 @@ import { Link } from "react-router-dom"
           if (response.ok) {
             let result = await response.json() // transforms the response to json
             let songInfo = result.data
-            let div = document.querySelector(domQuerySelector)
-            div.innerHTML += albumCard(songInfo[0]) // create a new album tyle
+            switch (sezione) {
+                case 'rockSection':
+                    setrockArtists(songInfo)
+                    console.log("ROCK",songInfo)
+                    break;
+                case "popSection":
+                    setpopArtists(songInfo)
+                    console.log("POP",songInfo)
+                    break;
+                case 'hipHopSection':
+                    sethipHopArtists(songInfo)
+                    console.log("HIPHOP",songInfo)
+                    break;
+            
+                default:
+                    break;
+            }
+            
           } else {
             console.log('error')
           }
@@ -125,12 +122,14 @@ import { Link } from "react-router-dom"
         }
       }
 
-      window.onload = async () => {
+     const lesgo = async () => {
         let rockRandomArtists = []
         let popRandomArtists = []
         let hipHopRandomArtists = []
 
         document.querySelector('#searchField').value = '' // empties search field on page load
+
+
 
         while (rockRandomArtists.length < 4) {
           // pushes elements inside the array until it has 4 strings
@@ -158,16 +157,19 @@ import { Link } from "react-router-dom"
         }
 
         for (let j = 0; j < rockRandomArtists.length; j++)
-          await handleArtist(rockRandomArtists[j], '#rockSection')
+          await handleArtist(rockRandomArtists[j], 'rockSection')
 
         for (let k = 0; k < popRandomArtists.length; k++)
-          await handleArtist(popRandomArtists[k], '#popSection')
+          await handleArtist(popRandomArtists[k], 'popSection')
 
         for (let l = 0; l < hipHopRandomArtists.length; l++)
-          await handleArtist(hipHopRandomArtists[l], '#hipHopSection')
-      }*/
+          await handleArtist(hipHopRandomArtists[l], 'hipHopSection')
+      }
 
+      useEffect(()=>{
+        lesgo();
 
+      },[])
 
 
     return (
@@ -270,8 +272,33 @@ import { Link } from "react-router-dom"
                 <div className="col-10">
                   <div id="searchResults" style={{ display: "none" }}>
                     <h2>Search Results </h2>
-                    {Songsearch === true &&
-                          <Link to="/">if true show</Link>}
+                    {console.log("ciao",Songsearch)}
+                    {console.log("artisti rocks",newrockArtists)}
+                    {console.log("artisti pop",newpopArtists)}
+                    {console.log("artisti hip hop",newhipHopArtists)}
+                    {Songsearch ? <div>{  Songsearch.map((e)=>(
+                            console.log("sono e",e),
+                            <div classN="col text-center" id={e.id}>
+                            <Link to="/">
+                              <img classN="img-fluid" src={
+                               e.album.cover_medium
+                              } alt="1" />
+                            </Link>
+                            <p>
+                              <Link to="/">
+                                Album: {
+                                  e.album.title.length < 16
+                                    ? `${e.album.title}`
+                                    : `${e.album.title.substring(0, 16)}...`
+                                }
+                              </Link>
+                              <Link to="/">
+                                Artist: {e.artist.name}
+                              </Link>
+                            </p>
+                          </div>
+                          ))}</div> : ''}
+                    
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" />
                     
                   </div>
@@ -281,21 +308,67 @@ import { Link } from "react-router-dom"
                 <div className="col-10">
                   <div id="rock">
                     <h2>Rock Classics</h2>
+
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                      id="rockSection">{  newrockArtists.map((e)=>(
+                            <div classN="col text-center" key={e.id}>
+                            <Link to="/">
+                              <img classN="img-fluid" src={
+                               e.album.cover_medium
+                              } alt="1" />
+                            </Link>
+                            <p>
+                              <Link to="/">
+                                Album: {
+                                  e.album.title.length < 16
+                                    ? `${e.album.title}`
+                                    : `${e.album.title.substring(0, 16)}...`
+                                }
+                              </Link>
+                              <Link to="/">
+                                Artist: {e.artist.name}
+                              </Link>
+                            </p>
+                          </div>
+                          ))}</div>
+                    
                     <div
-                      className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
-                      id="rockSection"
+                      
                     />
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="col-10">
+
                   <div id="pop">
+
                     <h2>Pop Culture</h2>
+
                     <div
                       className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                       id="popSection"
-                    />
+                    >{  newpopArtists.map((e)=>(
+                        <div classN="col text-center" key={e.id}>
+                        <Link to="/">
+                          <img classN="img-fluid" src={
+                           e.album.cover_medium
+                          } alt="1" />
+                        </Link>
+                        <p>
+                          <Link to="/">
+                            Album: {
+                              e.album.title.length < 16
+                                ? `${e.album.title}`
+                                : `${e.album.title.substring(0, 16)}...`
+                            }
+                          </Link>
+                          <Link to="/">
+                            Artist: {e.artist.name}
+                          </Link>
+                        </p>
+                      </div>
+                      ))}</div>
                   </div>
                 </div>
               </div>
@@ -305,8 +378,28 @@ import { Link } from "react-router-dom"
                     <h2>#HipHop</h2>
                     <div
                       className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
-                      id="hipHopSection"
-                    />
+                      id="popSection"
+                    >{  newhipHopArtists.map((e)=>(
+                        <div classN="col text-center" key={e.id}>
+                        <Link to="/">
+                          <img classN="img-fluid" src={
+                           e.album.cover_medium
+                          } alt="1" />
+                        </Link>
+                        <p>
+                          <Link to="/">
+                            Album: {
+                              e.album.title.length < 16
+                                ? `${e.album.title}`
+                                : `${e.album.title.substring(0, 16)}...`
+                            }
+                          </Link>
+                          <Link to="/">
+                            Artist: {e.artist.name}
+                          </Link>
+                        </p>
+                      </div>
+                      ))}</div>
                   </div>
                 </div>
               </div>
