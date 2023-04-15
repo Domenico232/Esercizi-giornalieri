@@ -1,6 +1,10 @@
+
 import React from "react"
 import {useState, useEffect} from "react"
 import { Link } from "react-router-dom"
+import Spotlogo from "../assets/Spotify_Logo.png"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 
 
  const Home = () => {
@@ -46,10 +50,10 @@ import { Link } from "react-router-dom"
       })
 
       const search = async (e) => {
-        let div = document.querySelector('#searchResults .row')
-        div.innerHTML = ''
+        //let div = document.querySelector('#searchResults .row')
+        //div.innerHTML = ''
         let searchQuery = e.target.value // gets the value from the search box
-
+        console.log(searchQuery)
         if (searchQuery.length > 2) {
           //if there's a value in the search box => fetch the information from rapidapi & display the result
           document.querySelector('#searchResults').style.display = 'block'
@@ -184,14 +188,14 @@ import { Link } from "react-router-dom"
                 id="sidebar"
               >
                 <div className="nav-container">
-                  <a className="navbar-brand" href="index.html">
+                  <Link className="navbar-brand" href="index.html">
                     <img
-                      src="../Spotify_Logo.png"
+                      src={Spotlogo}
                       alt="Spotify_Logo"
                       width={131}
                       height={40}
                     />
-                  </a>
+                  </Link>
                   <button
                     className="navbar-toggler"
                     type="button"
@@ -207,16 +211,16 @@ import { Link } from "react-router-dom"
                     <div className="navbar-nav">
                       <ul>
                         <li>
-                          <a className="nav-item nav-link" href="index.html">
+                          <Link className="nav-item nav-link" to="/">
                             <i className="fas fa-home fa-lg" />
                             &nbsp; Home
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a className="nav-item nav-link" href="/">
+                          <Link className="nav-item nav-link" to="/">
                             <i className="fas fa-book-open fa-lg" />
                             &nbsp; Your Library
-                          </a>
+                          </Link>
                         </li>
                         <li>
                           <div className="input-group mt-3">
@@ -273,8 +277,34 @@ import { Link } from "react-router-dom"
                 <div className="col-10">
                   <div id="searchResults" style={{ display: "none" }}>
                     <h2>Search Results </h2>
-                    {Songsearch ? <div>{  Songsearch.map((e)=>(
-                            console.log("sono e",e),
+                    {console.log("sono songsearch",Songsearch)}
+
+                    {Songsearch ? <Row>
+                      {Songsearch.map((e)=>(
+                            <Col classN="col text-center" id={e.id}>
+                            <Link to={"/album/"+ e.album.id}>
+                              <img classN="img-fluid" src={
+                               e.album.cover_medium
+                              } alt="1" />
+                            </Link>
+                            <p>
+                              <Link to={"/album/"+ e.album.id}>
+                                Album: {
+                                  e.album.title.length < 16
+                                    ? `${e.album.title}`
+                                    : `${e.album.title.substring(0, 16)}...`
+                                }
+                              </Link>
+                              <Link to={"/artist/"+e.album.id}>
+                                Artist: {e.artist.name}
+                              </Link>
+                            </p>
+                          </Col>
+                              ))}</Row> : <div>""""""""</div>
+                   }
+
+                   {/* {Songsearch ? <div>
+                      {Songsearch.map((e)=>(
                             <div classN="col text-center" id={e.id}>
                             <Link to={"/album/"+ e.album.id}>
                               <img classN="img-fluid" src={
@@ -294,11 +324,9 @@ import { Link } from "react-router-dom"
                               </Link>
                             </p>
                           </div>
-                          ))}</div> : ''}
-                    
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" />
-                    
-                  </div>
+                              ))}</div> : ''}*/}
+                         
+               </div>
                 </div>
               </div>
               <div className="row">
@@ -307,7 +335,7 @@ import { Link } from "react-router-dom"
                     <h2>Rock Classics</h2>
 
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
-                      id="rockSection">{  newrockArtists.map((e)=>(
+                      id="rockSection">{  newrockArtists.slice(7,11).map((e)=>(
                             <div classN="col text-center" key={e.id}>
                             <Link to={"/album/"+ e.album.id}>
                               <img classN="img-fluid" src={
@@ -345,7 +373,7 @@ import { Link } from "react-router-dom"
                     <div
                       className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                       id="popSection"
-                    >{  newpopArtists.map((e)=>(
+                    >{  newpopArtists.slice(7,11).map((e)=>(
                         <div classN="col text-center" key={e.id}>
                         <Link to={"/album/"+ e.album.id}>
                           <img classN="img-fluid" src={
@@ -376,7 +404,7 @@ import { Link } from "react-router-dom"
                      <div
                       className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                       id="popSection"
-                    >{  newhipHopArtists.map((e)=>(
+                    >{  newhipHopArtists.slice(7,11).map((e)=>(
                         <div classN="col text-center" key={e.id}>
                         <Link to={"/album/"+ e.album.id}>
                           <img classN="img-fluid" src={
@@ -403,46 +431,7 @@ import { Link } from "react-router-dom"
             </div>
           </div>
         </div>
-        <div className="container-fluid fixed-bottom bg-container pt-1">
-          <div className="row">
-            <div className="col-lg-10 offset-lg-2">
-              <div className="row">
-                <div className="col-6 col-md-4 col-lg-2 offset-3 offset-md-4 offset-lg-5 playerControls mt-1">
-                  <div className="row">
-                    <a href="/">
-                      <img src="playerbuttons/Shuffle.png" alt="shuffle" />
-                    </a>
-                    <a href="/">
-                      <img src="playerbuttons/Previous.png" alt="shuffle" />
-                    </a>
-                    <a href="/">
-                      <img src="playerbuttons/Play.png" alt="shuffle" />
-                    </a>
-                    <a href="/">
-                      <img src="playerbuttons/Next.png" alt="shuffle" />
-                    </a>
-                    <a href="/">
-                      <img src="playerbuttons/Repeat.png" alt="shuffle" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="row justify-content-center playBar py-3">
-                <div className="col-8 col-md-6">
-                  <div className="progress">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </>
       
     )

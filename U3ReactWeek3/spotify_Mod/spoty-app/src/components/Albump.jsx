@@ -85,61 +85,6 @@ const Albump = () => {
             <div className="container-fluid">
                 <div className="row">
                     {/*SIDEBAR VERTICAL*/}
-                    <div className="col-2">
-                        <nav
-                            className="navbar navbar-expand-lg navbar-expand-md navbar-white bg-navbar fixed-left justify-content-between"
-                            id="sidebar"
-                        >
-                            <div className="nav-container">
-                                <a className="navbar-brand" href="index.html">
-                                    <img
-                                        src="logo/Spotify_Logo.png"
-                                        alt="Spotify_Logo"
-                                        width={131}
-                                        height={40}
-                                    />
-                                </a>
-                                <button
-                                    className="navbar-toggler"
-                                    type="button"
-                                    data-toggle="collapse"
-                                    data-target="#navbarNavAltMarkup"
-                                    aria-controls="navbarNavAltMarkup"
-                                    aria-expanded="false"
-                                    aria-label="Toggle navigation"
-                                >
-                                    <span className="navbar-toggler-icon" />
-                                </button>
-                                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                                    <div className="navbar-nav">
-                                        <ul>
-                                            <li>
-                                                <a className="nav-item nav-link" href="index.html">
-                                                    <i className="fas fa-home fa-lg" />
-                                                    &nbsp; Home
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className="nav-item nav-link" href="/">
-                                                    <i className="fas fa-book-open fa-lg" />
-                                                    &nbsp; Your Library
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="nav-btn">
-                                <button className="btn signup-btn" type="button">
-                                    Sign Up
-                                </button>
-                                <button className="btn login-btn" type="button">
-                                    Login
-                                </button>
-                                <a href="/">Cookie Policy</a> |<a href="/"> Privacy</a>
-                            </div>
-                        </nav>
-                    </div>
                     {/*END SIDEBAR VERTICAL*/}
                     {/*MAIN*/}
                     <div className="col-12 col-md-9 offset-md-3 mainPage">
@@ -153,22 +98,22 @@ const Albump = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-3 pt-5 text-center" id="img-container"> <img src={album.cover} alt="" /> </div>
+                            <div className="col-md-3 pt-5 text-center" id="img-container"> <img src={album.cover} alt="" />
+                                                <button id="btnPlay" className="btn btn-success mt-3" type="button">Play</button></div>
                             <div className="col-md-8 p-5">
                                 <div className="row">
-                                    <div className="col-md-10 mb-5" id="trackList">
+                                    <div className="col-md-10 mb-5 text-white" id="trackList">
 
                                         {console.log(album)}
                                         {album.tracks.data ? <div>{ (album.tracks.data).map((e)=>{
-                                            return (<div><div class="mt-4 text-center">
-                                                <p class="album-title">{e.title}</p>
+                                            return (<div key={e.id}><div className="mt-4 text-center">
+                                                <p>{e.title}</p>
                                             </div>
-                                            <div class="text-center">
-                                                <Link to={"/artist/"+ album.artist.id} class="artist-name">{e.artist.name}</Link>
+                                            <div className="text-center">
+                                                <Link to={"/artist/"+ album.artist.id} className="artist-name">{e.artist.name}</Link>
                                             </div>
-                                            <div class="mt-4 text-center">
-                                                <button id="btnPlay" class="btn btn-success" type="button">Play</button>
-                                            </div></div>)})  }</div> : ''}
+                                       
+                                            </div>)})  }</div> : ''}
 
                                         </div> 
                                         
@@ -179,48 +124,6 @@ const Albump = () => {
                 </div>
             </div>
             {/*END MAIN*/}
-            {/*NAVBAR FLEX-BOTTOM*/}
-            <div className="container-fluid fixed-bottom bg-container pt-1">
-                <div className="row">
-                    <div className="col-lg-10 offset-lg-2">
-                        <div className="row">
-                            <div className="col-6 col-md-4 col-lg-2 offset-3 offset-md-4 offset-lg-5 playerControls mt-1">
-                                <div className="row">
-                                    <a href="/">
-                                        <img src="playerbuttons/Shuffle.png" alt="shuffle" />
-                                    </a>
-                                    <a href="/">
-                                        <img src="playerbuttons/Previous.png" alt="shuffle" />
-                                    </a>
-                                    <a href="/">
-                                        <img src="playerbuttons/Play.png" alt="shuffle" />
-                                    </a>
-                                    <a href="/">
-                                        <img src="playerbuttons/Next.png" alt="shuffle" />
-                                    </a>
-                                    <a href="/">
-                                        <img src="playerbuttons/Repeat.png" alt="shuffle" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row justify-content-center playBar py-3">
-                            <div className="col-8 col-md-6">
-                                <div className="progress">
-                                    <div
-                                        className="progress-bar"
-                                        role="progressbar"
-                                        aria-valuenow={0}
-                                        aria-valuemin={0}
-                                        aria-valuemax={100}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/*END NAVBAR BOTTOM*/}
         </>)
 }
 
