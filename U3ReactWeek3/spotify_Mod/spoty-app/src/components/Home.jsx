@@ -281,7 +281,7 @@ import Col from "react-bootstrap/Col"
 
                     {Songsearch ? <Row>
                       {Songsearch.map((e)=>(
-                            <Col classN="col text-center" id={e.id}>
+                            <Col classN="col text-center" id={e.id} key={e.id}>
                             <Link to={"/album/"+ e.album.id}>
                               <img classN="img-fluid" src={
                                e.album.cover_medium

@@ -106,7 +106,7 @@ const Albump = () => {
 
                                         {console.log(album)}
                                         {album.tracks.data ? <div>{ (album.tracks.data).map((e)=>{
-                                            return (<div key={e.id}><div className="mt-4 text-center">
+                                            return (<div  className="trackHover" key={e.id}><div className="mt-4 text-center">
                                                 <p>{e.title}</p>
                                             </div>
                                             <div className="text-center">
