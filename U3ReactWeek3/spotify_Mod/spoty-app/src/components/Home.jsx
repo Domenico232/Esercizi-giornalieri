@@ -295,7 +295,7 @@ import Col from "react-bootstrap/Col"
                                     : `${e.album.title.substring(0, 16)}...`
                                 }
                               </Link>
-                              <Link to={"/artist/"+e.album.id}>
+                              <Link to={"/artist/" + e.artist.id}>
                                 Artist: {e.artist.name}
                               </Link>
                             </p>
@@ -350,7 +350,7 @@ import Col from "react-bootstrap/Col"
                                     : `${e.album.title.substring(0, 16)}...`
                                 }
                               </Link>
-                              <Link to="/">
+                              <Link to={"/artist/" + e.artist.id}>
                                 Artist: {e.artist.name}
                               </Link>
                             </p>
@@ -388,7 +388,7 @@ import Col from "react-bootstrap/Col"
                                 : `${e.album.title.substring(0, 16)}...`
                             }
                           </Link>
-                          <Link to="/">
+                          <Link to={"/artist/" + e.artist.id}>
                             Artist: {e.artist.name}
                           </Link>
                         </p>
@@ -419,7 +419,7 @@ import Col from "react-bootstrap/Col"
                                 : `${e.album.title.substring(0, 16)}...`
                             }
                           </Link>
-                          <Link to="/">
+                          <Link to={"/artist/" + e.artist.id}>
                             Artist: {e.artist.name}
                           </Link>
                         </p>

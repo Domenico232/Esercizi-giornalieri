@@ -72,6 +72,8 @@ const Artistp = () =>{
     return(<>
         <div className="container-fluid">
           <div className="row">
+           
+            {/*END SIDEBAR VERTICAL*/}
             {/*MAIN*/}
             <div className="col-12 col-md-9 offset-md-3 mainPage">
               <div className="row mb-3">
