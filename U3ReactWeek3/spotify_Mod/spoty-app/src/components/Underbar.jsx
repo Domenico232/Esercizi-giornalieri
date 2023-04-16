@@ -4,16 +4,23 @@ import Play from "../assets/Play.png"
 import Next from "../assets/Next.png"
 import Repeat from "../assets/Repeat.png"
 import { Link } from "react-router-dom"
+import { useSelector } from "react-redux"
 
  export const Underbar = () =>{
+
+    const ecco = useSelector(state=>state.footersong);
+    console.log(ecco)
+
     return (
       <div className="container-fluid fixed-bottom bg-container pt-1">
         <div className="row">
           <div className="col-lg-10 offset-lg-2">
             <div className="row">
+            <div className="text-white">{ecco}</div>
               <div
                 className="col-6 col-md-4 col-lg-2 offset-3 offset-md-4 offset-lg-5 playerControls mt-1"
               >
+                
                 <div className="d-flex justify-content-between">
                   <Link to="/">
                     <img src={Shuffle} alt="shuffle" />

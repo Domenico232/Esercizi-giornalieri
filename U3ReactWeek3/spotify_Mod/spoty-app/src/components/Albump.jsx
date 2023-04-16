@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import {useDispatch} from "react-redux"
+import { addlike, changesong } from "../redux/actions";
 
 
 
@@ -10,6 +12,9 @@ const Albump = () => {
     const [album, setalbum] = useState({tracks:{
         data : []
     }})
+    const dispatch = useDispatch();
+
+
 
     /*function song(track) {
         return `
@@ -111,13 +116,13 @@ const Albump = () => {
                                             </div>
                                             <div className="text-center">
                                                 <Link to={"/artist/"+ album.artist.id} className="artist-name">{e.artist.name}</Link>
+                                                <div className="Like" onClick={()=>{dispatch(addlike())}}>LIKE</div> <div onClick={()=>{dispatch(changesong(e.title))}}>PLAY</div>
                                             </div>
                                        
                                             </div>)})  }</div> : ''}
 
                                         </div> 
-                                        
-                                </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
