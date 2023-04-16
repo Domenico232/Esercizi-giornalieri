@@ -14,6 +14,7 @@ import { useSelector } from "react-redux"
     return (
       <div className="container-fluid fixed-bottom bg-container pt-1">
         <div className="row">
+          
           <div className="col-lg-10 offset-lg-2">
             <div className="row">
             <div className="text-white">{ecco}</div>
